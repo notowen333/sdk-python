@@ -1147,7 +1147,7 @@ class Agent(AgentBase):
         for key in ("turns", "output_tokens", "total_tokens"):
             if key not in limits:
                 continue
-            value = limits[key]  # type: ignore[literal-required]
+            value = limits[key]
             if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
                 raise TypeError(f"limits[{key!r}] must be a positive int, got {value!r}")
 
